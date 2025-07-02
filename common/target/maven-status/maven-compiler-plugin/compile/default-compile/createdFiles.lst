@@ -1,0 +1,12 @@
+com\orderprocessing\common\dto\OrderRequestDTO.class
+com\orderprocessing\common\dto\OrderCreatedEvent.class
+com\orderprocessing\common\dto\OrderProductEvent$OrderProductEventBuilder.class
+com\orderprocessing\common\dto\RejectedItem$RejectedItemBuilder.class
+com\orderprocessing\common\dto\OrderItemDTO$OrderItemDTOBuilder.class
+com\orderprocessing\common\dto\OrderItemDTO.class
+com\orderprocessing\common\dto\OrderRequestDTO$OrderRequestDTOBuilder.class
+com\orderprocessing\common\dto\OrderCreatedEvent$OrderCreatedEventBuilder.class
+com\orderprocessing\common\dto\OrderProductEvent.class
+com\orderprocessing\common\dto\InventoryCheckResultEvent$InventoryCheckResultEventBuilder.class
+com\orderprocessing\common\dto\InventoryCheckResultEvent.class
+com\orderprocessing\common\dto\RejectedItem.class

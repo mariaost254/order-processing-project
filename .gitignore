@@ -1,0 +1,12 @@
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Logs
+*.log
+*.pid
+
+# OS files
+.DS_Store
+Thumbs.db

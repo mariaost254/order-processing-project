@@ -1,0 +1,25 @@
+spring:
+  redis:
+    host: redis
+    port: 6379
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: notification-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+    listener:
+      ack-mode: record
+      concurrency: 1
+      type: single
+      missing-topics-fatal: false
+      retry:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.kafka: DEBUG

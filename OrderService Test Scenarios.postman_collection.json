@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "a0a910b4-147c-4de2-a51d-9684b079b43e",
+		"name": "OrderService Test Scenarios",
+		"description": "Test scenarios for all order processing use cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All Products Available",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerName\": \"Alice\",\n  \"items\": [\n    { \"productId\": \"P1001\", \"quantity\": 2, \"category\": \"standard\" },\n    { \"productId\": \"P1002\", \"quantity\": 1, \"category\": \"perishable\" },\n    { \"productId\": \"P1003\", \"quantity\": 1, \"category\": \"digital\" }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Some Products Unavailable",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerName\": \"Bob\",\n  \"items\": [\n    { \"productId\": \"P1001\", \"quantity\": 20, \"category\": \"standard\" },\n    { \"productId\": \"P1002\", \"quantity\": 5, \"category\": \"perishable\" }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Perishable Expired",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerName\": \"Charlie\",\n  \"items\": [\n    { \"productId\": \"P1002\", \"quantity\": 1, \"category\": \"perishable\" }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerName\": \"Diana\",\n  \"items\": [\n    { \"productId\": \"P9999\", \"quantity\": 1, \"category\": \"standard\" }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mixed Valid and Invalid Items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerName\": \"Eve\",\n  \"items\": [\n    { \"productId\": \"P1001\", \"quantity\": 2, \"category\": \"standard\" },\n    { \"productId\": \"P9999\", \"quantity\": 1, \"category\": \"standard\" },\n    { \"productId\": \"P1003\", \"quantity\": 1, \"category\": \"digital\" }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customerName\": \"Frank\",\n  \"items\": [\n    { \"productId\": \"P1001\", \"quantity\": 1, \"category\": \"invalid\" }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
