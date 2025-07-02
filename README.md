@@ -54,3 +54,4 @@ A full set of scenarios is included in the provided Postman collection.
 - dockerfiles
 - mock DB
 - assistance with config files
+- postman collection
